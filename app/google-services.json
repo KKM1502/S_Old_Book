@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "453706514172",
+    "project_id": "semyung-old-book-kkm",
+    "storage_bucket": "semyung-old-book-kkm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:453706514172:android:6fa7409af018ff29f5a179",
+        "android_client_info": {
+          "package_name": "com.example.semyung_old_book_kkm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "453706514172-eoci4gpln6ov5r5q589cilhse5n595d5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnhlgRG-I3_YlbCeKY3UDjvI7DBzTRqLU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "453706514172-eoci4gpln6ov5r5q589cilhse5n595d5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
