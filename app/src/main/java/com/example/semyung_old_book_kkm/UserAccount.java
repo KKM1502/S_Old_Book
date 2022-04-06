@@ -6,6 +6,7 @@ package com.example.semyung_old_book_kkm;
 public class UserAccount {
 
     private String IdToken;     //Firebase Uid (고유아이디)
+    private String Nickname;    //닉네임
     private String emailId;     //이메일
     private String password;    //비밀번호
 
@@ -18,6 +19,10 @@ public class UserAccount {
     }
 
     public UserAccount() { }
+
+    public String getNickname() {return Nickname;  }
+
+    public void setNickname(String nickname) {Nickname = nickname; }
 
     public String getEmailId() {
         return emailId;
