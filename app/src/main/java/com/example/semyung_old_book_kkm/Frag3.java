@@ -1,5 +1,6 @@
 package com.example.semyung_old_book_kkm;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +17,7 @@ public class Frag3 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.frag3, container, false);
+        view = inflater.inflate(R.layout.frag1, container, false);
 
         return view;
     }
