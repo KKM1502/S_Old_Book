@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Frag2 frag2;
     private Frag3 frag3;
     private Frag4 frag4;
+    private Frag5 frag5;
 
 
     @Override
@@ -38,11 +39,13 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_like:
                         setFrag(1);
                         break;
-                    case R.id.action_chat:
+                    case R.id.action_home:
                         setFrag(2);
                         break;
                     case R.id.action_account:
                         setFrag(3);
+                    case R.id.action_chat:
+                        setFrag(4);
                         break;
                 }
                 return true;
@@ -52,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         frag2 = new Frag2();
         frag3 = new Frag3();
         frag4 = new Frag4();
+        frag5 = new Frag5();
         setFrag(0); // 첫 fragment 화면 지정할 것인지 선택.
 
 
@@ -76,6 +80,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 3:
                 ft.replace(R.id.main_frame, frag4);
+                ft.commit();
+                break;
+            case 4:
+                ft.replace(R.id.main_frame, frag5);
                 ft.commit();
                 break;
 

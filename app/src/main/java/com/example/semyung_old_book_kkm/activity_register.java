@@ -3,6 +3,7 @@ package com.example.semyung_old_book_kkm;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -60,6 +61,8 @@ public class activity_register extends AppCompatActivity {
                             mDatabaseRef.child("UserAccount").child(firebaseUser.getUid()).setValue(account);
 
                             Toast.makeText(activity_register.this,"회원가입에 성공했습니다", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(activity_register.this, LoginActivity.class);
+                            startActivity(intent);
 
                     } else{
                             Toast.makeText(activity_register.this,"회원가입에 실패했습니다", Toast.LENGTH_SHORT).show();
