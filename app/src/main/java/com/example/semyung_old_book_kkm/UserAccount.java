@@ -10,6 +10,7 @@ public class UserAccount {
     private String emailId;     //이메일
     private String password;    //비밀번호
 
+    //UID
     public String getIdToken() {
         return IdToken;
     }
@@ -20,10 +21,12 @@ public class UserAccount {
 
     public UserAccount() { }
 
+    //nickname
     public String getNickname() {return Nickname;  }
 
     public void setNickname(String nickname) {Nickname = nickname; }
 
+    //email
     public String getEmailId() {
         return emailId;
     }
@@ -32,11 +35,8 @@ public class UserAccount {
         this.emailId = emailId;
     }
 
-    public String getPassword() {
-        return password;
-    }
+    //password
+    public String getPassword() {return password;   }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    public void setPassword(String password) { this.password = password;}
 }
