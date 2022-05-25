@@ -1,12 +1,14 @@
 package com.example.semyung_old_book_kkm;
 
-import androidx.annotation.NonNull;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.os.Bundle;
-import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -15,50 +17,49 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView; //바텀 네비게이션 뷰
     private FragmentManager fm;
     private FragmentTransaction ft;
-    private Frag1 frag1;
-    private Frag2 frag2;
-    private Frag3 frag3;
-    private Frag4 frag4;
-    private Frag5 frag5;
+    private ChatFrag chatFrag;
+    private MainFrag mainFrag;
+    private UploadFrag uploadFrag;
+    Context mContext;
+    private Button button_v;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        mContext=this;
 
         bottomNavigationView = findViewById(R.id.bottomNavi);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        Button button_v = findViewById(R.id.button_v);
+        button_v.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()){
-                    case R.id.action_menu:
-                        setFrag(0);
-                        break;
-                    case R.id.action_like:
-                        setFrag(1);
-                        break;
-                    case R.id.action_home:
-                        setFrag(2);
-                        break;
-                    case R.id.action_account:
-                        setFrag(3);
-                    case R.id.action_chat:
-                        setFrag(4);
-                        break;
-                }
-                return true;
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),PhoneVerify.class);
+                startActivity(intent);
             }
         });
-        frag1 = new Frag1();
-        frag2 = new Frag2();
-        frag3 = new Frag3();
-        frag4 = new Frag4();
-        frag5 = new Frag5();
-        setFrag(0); // 첫 fragment 화면 지정할 것인지 선택.
 
+        bottomNavigationView.setOnNavigationItemSelectedListener(menuItem -> {
+            switch (menuItem.getItemId()){
+                case R.id.action_like:
+                    setFrag(0);
+                    break;
+                case R.id.action_home:
+                    setFrag(1);
+                    break;
+                case R.id.action_account:
+                    setFrag(2);
 
+            }
+            return true;
+        });
+        chatFrag = new ChatFrag(mContext);
+        mainFrag = new MainFrag(mContext);
+        uploadFrag = new UploadFrag(mContext);
+
+        setFrag(1); // 첫 fragment 화면 지정할 것인지 선택.
     }
 
     //fragment 교체가 일어나는 실행문
@@ -67,26 +68,17 @@ public class MainActivity extends AppCompatActivity {
         ft = fm.beginTransaction();
         switch (n) {
             case 0:
-                ft.replace(R.id.main_frame, frag1);
+                ft.replace(R.id.main_frame, chatFrag);
                 ft.commit();
                 break;
             case 1:
-                ft.replace(R.id.main_frame, frag2);
+                ft.replace(R.id.main_frame, mainFrag);
                 ft.commit();
                 break;
             case 2:
-                ft.replace(R.id.main_frame, frag3);
+                ft.replace(R.id.main_frame, uploadFrag);
                 ft.commit();
                 break;
-            case 3:
-                ft.replace(R.id.main_frame, frag4);
-                ft.commit();
-                break;
-            case 4:
-                ft.replace(R.id.main_frame, frag5);
-                ft.commit();
-                break;
-
         }
     }
 

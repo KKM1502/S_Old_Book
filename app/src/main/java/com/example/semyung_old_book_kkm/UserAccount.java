@@ -5,9 +5,19 @@ package com.example.semyung_old_book_kkm;
  */
 public class UserAccount {
 
+    private String Pnumb;
     private String IdToken;     //Firebase Uid (고유아이디)
     private String Nickname;    //닉네임
     private String emailId;     //이메일
+
+    public String getPnumb() {
+        return Pnumb;
+    }
+
+    public void setPnumb(String pnumb) {
+        Pnumb = pnumb;
+    }
+
     private String password;    //비밀번호
 
     //UID
@@ -19,12 +29,17 @@ public class UserAccount {
         IdToken = idToken;
     }
 
-    public UserAccount() { }
+    public UserAccount() {
+    }
 
     //nickname
-    public String getNickname() {return Nickname;  }
+    public String getNickname() {
+        return Nickname;
+    }
 
-    public void setNickname(String nickname) {Nickname = nickname; }
+    public void setNickname(String nickname) {
+        Nickname = nickname;
+    }
 
     //email
     public String getEmailId() {
@@ -36,7 +51,14 @@ public class UserAccount {
     }
 
     //password
-    public String getPassword() {return password;   }
+    public String getPassword() {
+        return password;
+    }
 
-    public void setPassword(String password) { this.password = password;}
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    //phonenumber
+
 }

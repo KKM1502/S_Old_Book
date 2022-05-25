@@ -16,7 +16,7 @@ public class Frag5 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.frag1, container, false);
+        view = inflater.inflate(R.layout.chatfrag, container, false);
 
         return view;
     }
